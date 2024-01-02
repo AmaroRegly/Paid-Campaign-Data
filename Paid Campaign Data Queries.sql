@@ -14,8 +14,8 @@ WITH results_campaign AS (
 )
 	SELECT
 		*,
-        ROUND(Spent / Clicks, 2) AS CPC,
-        ROUND(Spent / Total_Conversion, 2) AS CPA
+        	ROUND(Spent / Clicks, 2) AS CPC,
+        	ROUND(Spent / Total_Conversion, 2) AS CPA
 	FROM
 		results_campaign;
 
@@ -35,8 +35,8 @@ WITH age_groups AS (
 )
 	SELECT
 		*,
-        ROUND(Spent / Clicks, 2) AS CPC,
-        ROUND(Spent / Total_Conversion, 2) AS CPA
+        	ROUND(Spent / Clicks, 2) AS CPC,
+        	ROUND(Spent / Total_Conversion, 2) AS CPA
 	FROM
 		age_groups;
 
@@ -58,8 +58,8 @@ WITH demographic_groups AS (
 )
 	SELECT
 		*,
-        ROUND(Spent / Clicks, 2) AS CPC,
-        ROUND(Spent / Total_Conversion, 2) AS CPA
+        	ROUND(Spent / Clicks, 2) AS CPC,
+        	ROUND(Spent / Total_Conversion, 2) AS CPA
 	FROM
 		demographic_groups
 	ORDER BY
@@ -70,8 +70,8 @@ WITH demographic_groups AS (
 
 SELECT
 	SUM(Clicks) AS Clicks,
-    SUM(Total_Conversion) AS Total_Conversions,
-    SUM(Approved_Conversion) AS Approved_Conversions
+    	SUM(Total_Conversion) AS Total_Conversions,
+    	SUM(Approved_Conversion) AS Approved_Conversions
 FROM
 	kag_conversion_data;
 
@@ -81,49 +81,49 @@ FROM
 
 SELECT
 	xyz_campaign_id,
-    ad_id,
-    Impressions,
-    Clicks,
-    ROUND(Spent, 2) AS Spent,
-    Total_Conversion
+    	ad_id,
+    	Impressions,
+    	Clicks,
+    	ROUND(Spent, 2) AS Spent,
+    	Total_Conversion
 FROM
 	kag_conversion_data
 WHERE
 	xyz_campaign_id = 916 and
-    Clicks > 1
+    	Clicks > 1
 ORDER BY
 	Total_Conversion desc,
-    Clicks desc
+    	Clicks desc
 LIMIT 5;
     
 -- Campaign 916
 
 SELECT
 	xyz_campaign_id,
-    ad_id,
-    Impressions,
-    Clicks,
-    ROUND(Spent, 2) AS Spent,
-    Total_Conversion
+    	ad_id,
+    	Impressions,
+    	Clicks,
+    	ROUND(Spent, 2) AS Spent,
+    	Total_Conversion
 FROM
 	kag_conversion_data
 WHERE
 	xyz_campaign_id = 936 and
-    Clicks > 1
+    	Clicks > 1
 ORDER BY
 	Total_Conversion desc,
-    Clicks desc
+    	Clicks desc
 LIMIT 5;
 
 -- Campaign 1178
 
 SELECT
 	xyz_campaign_id,
-    ad_id,
-    Impressions,
-    Clicks,
-    ROUND(Spent, 2) AS Spent,
-    Total_Conversion
+    	ad_id,
+    	Impressions,
+    	Clicks,
+    	ROUND(Spent, 2) AS Spent,
+    	Total_Conversion
 FROM
 	kag_conversion_data
 WHERE
@@ -131,7 +131,7 @@ WHERE
     Clicks > 1
 ORDER BY
 	Total_Conversion desc,
-    Clicks desc
+    	Clicks desc
 LIMIT 5;
 
 -- Which interest brought the best return in terms of total conversion?
@@ -152,8 +152,8 @@ WITH interest_result AS (
 )
 		SELECT
 		*,
-        ROUND(Spent / Clicks, 2) AS CPC,
-        ROUND(Spent / Total_Conversion, 2) AS CPA
+        	ROUND(Spent / Clicks, 2) AS CPC,
+        	ROUND(Spent / Total_Conversion, 2) AS CPA
 	FROM
 		interest_result;
     
